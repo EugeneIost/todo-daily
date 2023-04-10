@@ -8,12 +8,12 @@ import TitlesWrapper from "./components/UI/TitlesWrapper/TitlesWrapper";
 import todos from "./store/todos";
 
 function App() {
-  // Рендерится два раза в strict моде, костыли:
   useEffect(() => {
     const abortController = new AbortController();
     todos.fetchTodos(abortController);
     return () => abortController.abort();
   }, []);
+
   return (
     <Container>
       <Header />

@@ -14,22 +14,44 @@ const TodoList = observer(() => {
       <span className={styles.todoList__completed}>
         {todos.completedTodosLength}/{todos.todos.length} завершено
       </span>
-      {todos.todos.length ? (
-        todos.todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            id={todo.id}
-            completed={todo.completed}
-            title={todo.title}
-            description={todo.description}
-            created={todo.created}
-          />
-        ))
+      {todos.todos.length > 0 - todos.completedTodosLength ? (
+        todos.todos.map(
+          (todo) =>
+            !todo.completed && (
+              <TodoItem
+                key={todo.id}
+                id={todo.id}
+                completed={todo.completed}
+                title={todo.title}
+                description={todo.description}
+                created={todo.created}
+              />
+            )
+        )
       ) : (
         <h1 className={styles["todoList__empty-message"]}>
           На этот день задачи отсутствуют...
         </h1>
       )}
+
+      {todos.completedTodosLength > 0 && (
+        <h1 className={styles.todoList__title}>Завершенные задачи</h1>
+      )}
+
+      {todos.completedTodosLength > 0 &&
+        todos.todos.map(
+          (todo) =>
+            todo.completed && (
+              <TodoItem
+                key={todo.id}
+                id={todo.id}
+                completed={todo.completed}
+                title={todo.title}
+                description={todo.description}
+                created={todo.created}
+              />
+            )
+        )}
       {!showNewTodoForm ? (
         <AddButton
           clickAddButtonHandler={(e) => {

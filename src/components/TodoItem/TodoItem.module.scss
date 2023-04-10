@@ -4,6 +4,10 @@
 
   margin-bottom: 1rem;
 
+  &_completed {
+    background-color: #eaeaea;
+  }
+
   &_display-none {
     display: none;
   }
@@ -55,22 +59,29 @@
     display: inline-flex;
     align-items: center;
     user-select: none;
+    margin-right: 1.5rem;
+    background-color: #eaeaea;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    position: relative;
   }
 
   &__checkbox + label::before {
     content: "";
     display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border-radius: 5rem;
-    margin-right: 1.5rem;
-    background-color: #eaeaea;
+    width: 2.4rem;
+    height: 1.7rem;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 100%;
 
-    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
   }
 
   &__checkbox:checked + label::before {

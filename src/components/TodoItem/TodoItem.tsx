@@ -33,7 +33,11 @@ const TodoItem = observer(
             />
             <label htmlFor={`checkbox+${id}`}></label>
           </div>
-          <div className={styles["todoItem__main-container"]}>
+          <div
+            className={cn(styles["todoItem__main-container"], {
+              [styles["todoItem_completed"]]: completed,
+            })}
+          >
             <div className={styles["todoItem__text-container"]}>
               <h2 className={styles["todoItem__title"]}>{title}</h2>
               <p className={styles["todoItem__descr"]}>{description}</p>

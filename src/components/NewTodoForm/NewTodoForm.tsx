@@ -5,8 +5,8 @@ import todos from "../../store/todos";
 import { Todo } from "../../types/Todo";
 
 interface NewTodoFormProps {
-  id: Todo["id"] | undefined;
-  setShowForm: React.Dispatch<React.SetStateAction<boolean>> | undefined;
+  id?: Todo["id"];
+  setShowForm?: React.Dispatch<React.SetStateAction<boolean>>;
   clickCancelButtonHandler: React.MouseEventHandler<HTMLButtonElement>;
 }
 
