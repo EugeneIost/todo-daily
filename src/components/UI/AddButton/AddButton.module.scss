@@ -1,0 +1,22 @@
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  width: auto;
+  border: none;
+  cursor: pointer;
+
+  &__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    color: var(--main-color);
+  }
+
+  &__icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 3rem;
+  }
+}
